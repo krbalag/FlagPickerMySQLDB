@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: com.flagpicker.springboot.FlagPickerApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 7.041 s <<< FAILURE! - in com.flagpicker.springboot.FlagPickerApplicationTests
+contextLoads(com.flagpicker.springboot.FlagPickerApplicationTests)  Time elapsed: 0.016 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'countryController': Unsatisfied dependency expressed through field 'countryRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'countryRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract org.springframework.data.domain.Page com.flagpicker.springboot.repository.CountryRepository.findByContinentId(java.lang.Long,org.springframework.data.domain.Pageable)! No property id found for type Continent! Traversed path: Country.continent.
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'countryRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract org.springframework.data.domain.Page com.flagpicker.springboot.repository.CountryRepository.findByContinentId(java.lang.Long,org.springframework.data.domain.Pageable)! No property id found for type Continent! Traversed path: Country.continent.
+Caused by: java.lang.IllegalArgumentException: Failed to create query for method public abstract org.springframework.data.domain.Page com.flagpicker.springboot.repository.CountryRepository.findByContinentId(java.lang.Long,org.springframework.data.domain.Pageable)! No property id found for type Continent! Traversed path: Country.continent.
+Caused by: org.springframework.data.mapping.PropertyReferenceException: No property id found for type Continent! Traversed path: Country.continent.
+
